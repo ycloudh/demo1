@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林间小屋 | 个人博客</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#4A5568',
+                        accent: '#3182CE',
+                        light: '#F7FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Georgia', 'Cambria', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-primary">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-accent mb-4 md:mb-0">林间小屋</a>
+            
+            <nav class="flex space-x-6">
+                <a href="#" class="font-medium text-primary hover:text-accent transition-colors">首页</a>
+                <a href="#" class="font-medium text-primary hover:text-accent transition-colors">文章</a>
+                <a href="#" class="font-medium text-primary hover:text-accent transition-colors">分类</a>
+                <a href="#" class="font-medium text-primary hover:text-accent transition-colors">关于</a>
+            </nav>
+            
+            <div class="mt-4 md:mt-0">
+                <button class="text-gray-600 hover:text-accent transition-colors">
+                    <i class="fa fa-search text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 特色文章 -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">特色文章</h2>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="https://picsum.photos/id/1039/800/600" alt="自然风景" class="h-full w-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full mr-3">旅行</span>
+                            <span><i class="fa fa-calendar-o mr-1"></i> 2023年10月15日</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">山间徒步：寻找内心的平静</h3>
+                        <p class="text-gray-600 mb-6 line-clamp-4">
+                            清晨，当第一缕阳光穿透树林，我踏上了这条熟悉的山间小径。空气中弥漫着湿润的泥土气息和松针的清香，鸟儿在枝头欢快地歌唱，仿佛在欢迎每一位早起的徒步者...
+                        </p>
+                        <a href="#" class="inline-flex items-center text-accent font-medium hover:underline">
+                            阅读全文 <i class="fa fa-long-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 最新文章 -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">最新文章</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 文章卡片1 -->
+                <article class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <img src="https://picsum.photos/id/292/600/400" alt="咖啡与书籍" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full mr-2">生活方式</span>
+                            <span>2023年10月10日</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">周末阅读：五本改变我思维方式的书</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            阅读是一个与自己对话的过程，也是拓宽视野的最佳方式。在这个快节奏的时代，静下心来读一本好书变得越来越奢侈...
+                        </p>
+                        <a href="#" class="text-accent font-medium hover:underline">阅读全文</a>
+                    </div>
+                </article>
+                
+                <!-- 文章卡片2 -->
+                <article class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <img src="https://picsum.photos/id/431/600/400" alt="城市夜景" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full mr-2">城市</span>
+                            <span>2023年10月5日</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">城市中的宁静角落：发现都市绿洲</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            繁华都市中，总有一些不为人知的宁静角落，等待着被发现。这些地方像是城市的肺叶，为忙碌的人们提供喘息的空间...
+                        </p>
+                        <a href="#" class="text-accent font-medium hover:underline">阅读全文</a>
+                    </div>
+                </article>
+                
+                <!-- 文章卡片3 -->
+                <article class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
+                    <img src="https://picsum.photos/id/8/600/400" alt="手工制作" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full mr-2">手工艺</span>
+                            <span>2023年9月28日</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">手工制作：重拾专注与创造力</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            在数字化时代，手工制作似乎成了一种奢侈。然而，当我们的双手与材料接触，当我们专注于创造的过程，那种满足感是无法替代的...
+                        </p>
+                        <a href="#" class="text-accent font-medium hover:underline">阅读全文</a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium text-primary hover:bg-gray-50 transition-colors shadow-sm">
+                    查看更多文章 <i class="fa fa-angle-right ml-2"></i>
+                </a>
+            </div>
+        </section>
+        
+        <!-- 分类和订阅 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            <!-- 分类 -->
+            <div class="lg:col-span-2 bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-xl font-bold mb-6 pb-2 border-b border-gray-100">文章分类</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <span class="bg-blue-100 text-blue-800 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <i class="fa fa-compass"></i>
+                        </span>
+                        <div>
+                            <p class="font-medium">旅行</p>
+                            <p class="text-sm text-gray-500">12篇文章</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <span class="bg-green-100 text-green-800 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <i class="fa fa-book"></i>
+                        </span>
+                        <div>
+                            <p class="font-medium">阅读</p>
+                            <p class="text-sm text-gray-500">8篇文章</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <span class="bg-purple-100 text-purple-800 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <i class="fa fa-building"></i>
+                        </span>
+                        <div>
+                            <p class="font-medium">城市</p>
+                            <p class="text-sm text-gray-500">15篇文章</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <span class="bg-yellow-100 text-yellow-800 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <i class="fa fa-paint-brush"></i>
+                        </span>
+                        <div>
+                            <p class="font-medium">手工艺</p>
+                            <p class="text-sm text-gray-500">6篇文章</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <span class="bg-red-100 text-red-800 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <i class="fa fa-cutlery"></i>
+                        </span>
+                        <div>
+                            <p class="font-medium">美食</p>
+                            <p class="text-sm text-gray-500">9篇文章</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <span class="bg-indigo-100 text-indigo-800 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <i class="fa fa-lightbulb-o"></i>
+                        </span>
+                        <div>
+                            <p class="font-medium">思考</p>
+                            <p class="text-sm text-gray-500">11篇文章</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 订阅 -->
+            <div class="bg-accent rounded-xl shadow-sm p-6 text-white">
+                <h3 class="text-xl font-bold mb-4">订阅更新</h3>
+                <p class="mb-6 opacity-90">
+                    订阅我的博客更新，及时获取最新文章和独家内容。
+                </p>
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm mb-2 opacity-90">姓名</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+                            placeholder="请输入您的姓名"
+                        >
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm mb-2 opacity-90">邮箱</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+                            placeholder="请输入您的邮箱"
+                            required
+                        >
+                    </div>
+                    <button 
+                        type="submit" 
+                        class="w-full py-3 bg-white text-accent rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                    >
+                        订阅
+                    </button>
+                </form>
+                <p class="text-xs mt-4 opacity-80">
+                    订阅即表示您同意接收我的邮件更新，您可以随时取消订阅。
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">林间小屋</h4>
+                    <p class="text-gray-300 mb-4">
+                        分享生活中的美好瞬间与思考感悟，寻找平凡中的不凡。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fa fa-wechat text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fa fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">最新文章</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">热门文章</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">关于我</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">联系我</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">分类</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">旅行</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">阅读</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">城市</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">手工艺</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">美食</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">联系我</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope-o mr-2 text-gray-300"></i>
+                            <a href="mailto:hello@linjianxiaowu.com" class="text-gray-300 hover:text-white transition-colors">hello@linjianxiaowu.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-map-marker mr-2 text-gray-300"></i>
+                            <span class="text-gray-300">杭州市西湖区</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 林间小屋博客. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow');
+                header.classList.add('shadow-sm');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 订阅表单处理
+        const subscribeForm = document.querySelector('form');
+        if (subscribeForm) {
+            subscribeForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('订阅成功！感谢您的关注。');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
